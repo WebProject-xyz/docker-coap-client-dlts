@@ -1,6 +1,9 @@
 # docker-coap-client-dlts (LIBCOAP)
 https://github.com/home-assistant/libcoap/tree/dtls with DLTS dockerized
 
+## Credits
+all credits go to https://github.com/home-assistant/libcoap/graphs/contributors
+
 ## Usage
 `docker run -rm --net=host --name coap-client webproject/coap-client`
 
