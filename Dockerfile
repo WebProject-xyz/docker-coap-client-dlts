@@ -1,5 +1,5 @@
 FROM debian as builder
-MAINTAINER Benjamin Fahl
+MAINTAINER Benjamin Fahl <git@webproject.xyz>
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBIAN_FRONTEND newt
 RUN apt-get update \
