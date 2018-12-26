@@ -5,10 +5,18 @@ https://github.com/home-assistant/libcoap/tree/dtls with DLTS dockerized
 all credits go to https://github.com/home-assistant/libcoap/graphs/contributors
 
 ## Usage
-`docker run -rm --net=host --name coap-client webproject/coap-client`
+##### Build 
+`docker build -t webproject/coap-client:latest . `
 
-## Docker hub
-https://hub.docker.com/r/webproject/coap-client/
+#### Run command in Docker
+#### Generate API User and <COAP_API_KEY> (Shared Key)
+`docker run --rm --net=host --name coap-client webproject/coap-client -m post -u "Client_identity" -k "<COAP_GATEWAY_SECRET>" -e '{"9090":"php-api-user"}' "coaps://<COAP_GATEWAY_IP>:5684/15011/9063""`
+
+#### Get all api endpoints
+`docker run --rm --net=host --name coap-client webproject/coap-client -m get -u "php-api-user"  -k "<COAP_API_KEY>" "coaps://<COAP_GATEWAY_IP>:5684/.well-known/core"` 
+
+#### Show help
+`docker run -rm --net=host --name coap-client webproject/coap-client`
 
 ## License
 see creators licence: at https://github.com/home-assistant/libcoap/tree/dtls 
